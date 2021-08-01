@@ -14,6 +14,7 @@ class Api {
                 .connectTimeout(TIMEOUT.toLong(), TimeUnit.MILLISECONDS)
                 .readTimeout(TIMEOUT.toLong(), TimeUnit.MILLISECONDS)
                 .writeTimeout(TIMEOUT.toLong(), TimeUnit.MILLISECONDS)
+                .addNetworkInterceptor(FlipperWrapper.flipperNetworkInterceptor)
                 .build()
         }
     }

@@ -13,4 +13,9 @@ class SearchUserUseCase @Inject constructor(private val userRepository: UserRepo
         withContext(Dispatchers.IO) {
             return@withContext userRepository.searchUsers(query)
         }
+
+    suspend operator fun invoke(query: String, page: Int): Result<UserSearchResponse> =
+        withContext(Dispatchers.IO) {
+            return@withContext userRepository.searchUsers(query, page)
+        }
 }

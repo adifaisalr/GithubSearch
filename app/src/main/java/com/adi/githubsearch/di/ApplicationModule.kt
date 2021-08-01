@@ -17,7 +17,7 @@ class ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideMidasService(): GithubService {
+    fun provideGithubService(): GithubService {
         return Retrofit.Builder()
             .baseUrl(Api.DEFAULT_BASE_URL)
             .client(Api.getDefaultClient())

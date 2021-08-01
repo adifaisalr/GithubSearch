@@ -12,4 +12,8 @@ class UserRepositoryImpl(
     override suspend fun searchUsers(query: String): Result<UserSearchResponse> {
         return githubService.searchUsers(query)
     }
+
+    override suspend fun searchUsers(query: String, page: Int): Result<UserSearchResponse> {
+        return githubService.searchUsers(query, page)
+    }
 }

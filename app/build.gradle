@@ -67,10 +67,13 @@ dependencies {
     implementation deps.navigation.ui_ktx
     implementation deps.lottie
     implementation deps.hilt.android
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"
 
     debugImplementation deps.flipper.flipper
     debugImplementation deps.flipper.network
     debugImplementation deps.soloader
+
+    releaseImplementation  deps.flipper.noop
 
     kapt deps.dagger.android_support_compiler
     kapt deps.dagger.compiler
@@ -79,6 +82,12 @@ dependencies {
     kapt deps.hilt.compiler
 
     testImplementation deps.junit
+    testImplementation deps.mock_web_server
+    testImplementation deps.arch_core.testing
+    testImplementation deps.mockito.core
+    testImplementation deps.coroutines.android
+    testImplementation deps.coroutines.test
+    testImplementation deps.mockk
 
     androidTestImplementation deps.atsl.core
     androidTestImplementation deps.atsl.ext_junit

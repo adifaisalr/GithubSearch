@@ -2,4 +2,6 @@
     <string name="app_name">GithubSearch</string>
     <string name="search_hint">search users</string>
     <string name="search">search</string>
+    <string name="empty_search_result">No results for <b>%s</b></string>
+    <string name="general_error">Unable to get data, please try again later</string>
 </resources>
