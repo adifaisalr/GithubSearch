@@ -9,8 +9,8 @@ import retrofit2.http.Query
  */
 interface GithubService {
     @GET("search/users")
-    fun searchRepos(@Query("q") query: String): Result<UserSearchResponse>
+    fun searchUsers(@Query("q") query: String): Result<UserSearchResponse>
 
     @GET("search/users")
-    fun searchRepos(@Query("q") query: String, @Query("page") page: Int): Result<UserSearchResponse>
+    fun searchUsers(@Query("q") query: String, @Query("page") page: Int): Result<UserSearchResponse>
 }

@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -31,23 +33,47 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     buildFeatures{
         viewBinding true
     }
 }
 
 dependencies {
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+    implementation deps.timber
     implementation deps.kotlin.stdlib
     implementation deps.core_ktx
     implementation deps.app_compat
     implementation deps.material
     implementation deps.constraint_layout
-
     implementation deps.lifecycle.livedata_ktx
     implementation deps.lifecycle.viewmodel_ktx
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.java8
 
-    implementation deps.retrofit.runtime
-    implementation deps.retrofit.gson
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    implementation deps.constraint_layout
+    implementation deps.kotlin.stdlib
+    implementation deps.glide.runtime
+    implementation deps.annotations
+    implementation deps.navigation.fragment_ktx
+    implementation deps.navigation.ui_ktx
+    implementation deps.lottie
+    implementation deps.hilt.android
+
+    debugImplementation deps.flipper.flipper
+    debugImplementation deps.flipper.network
+    debugImplementation deps.soloader
+
+    kapt deps.dagger.android_support_compiler
+    kapt deps.dagger.compiler
+    kapt deps.lifecycle.compiler
+    kapt deps.glide.compiler
+    kapt deps.hilt.compiler
 
     testImplementation deps.junit
 

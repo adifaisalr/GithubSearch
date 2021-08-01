@@ -58,6 +58,7 @@ versions.gms = "4.3.8"
 versions.firebase_bom = "28.2.1"
 versions.crashlytics = "2.7.1"
 versions.mp_android_chart = "v3.1.0"
+versions.hilt = "2.35"
 ext.versions = versions
 
 def build_versions = [:]
@@ -246,6 +247,12 @@ firebase.crashlytics = "com.google.firebase:firebase-crashlytics"
 firebase.bom = "com.google.firebase:firebase-bom:$versions.firebase_bom"
 firebase.crashlytics_gradle = "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlytics"
 deps.firebase = firebase
+
+def hilt = [:]
+hilt.gradle_plugin = "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
+hilt.android = "com.google.dagger:hilt-android:$versions.hilt"
+hilt.compiler = "com.google.dagger:hilt-android-compiler:$versions.hilt"
+deps.hilt = hilt
 
 ext.deps = deps
 
