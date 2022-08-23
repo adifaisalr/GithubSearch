@@ -1,20 +1,23 @@
 package com.adi.githubsearch
 
 import android.app.Application
-import com.adi.githubsearch.api.FlipperWrapper
-import com.facebook.soloader.SoLoader
+import com.adi.githubsearch.api.Api
+import com.adi.githubsearch.api.ApiBaseConfigurator
 import dagger.hilt.android.HiltAndroidApp
-import timber.log.Timber
+import okhttp3.OkHttpClient
 
 @HiltAndroidApp
-class GithubSearchApp : Application() {
+open class GithubSearchApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        SoLoader.init(this, false)
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-            FlipperWrapper.setup(this)
-        }
+
+        Api.setBaseConfigurator(object : ApiBaseConfigurator {
+            override fun newHttpClientBuilder(): OkHttpClient.Builder = httpClientBuilder()
+        })
+    }
+
+    open fun httpClientBuilder(): OkHttpClient.Builder {
+        return OkHttpClient.Builder()
     }
 }

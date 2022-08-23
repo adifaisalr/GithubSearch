@@ -1,4 +1,4 @@
-package com.adi.githubsearch.api
+package com.adi.githubsearch
 
 import android.app.Application
 import com.facebook.flipper.android.AndroidFlipperClient
