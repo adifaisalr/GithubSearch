@@ -68,6 +68,7 @@ dependencies {
     implementation deps.lottie
     implementation deps.hilt.android
     implementation "com.squareup.okhttp3:okhttp:4.9.1"
+    testImplementation project(path: ':app')
 
     debugImplementation deps.flipper.flipper
     debugImplementation deps.flipper.network

@@ -51,7 +51,6 @@ class GithubServiceTest {
             val response = service.searchUsers("adifai") as Result.Success
 
             assertNotNull(response)
-            assertEquals(response, notNullValue())
             assertEquals(response.data?.total_count, 7)
             assertEquals(response.data?.items?.size, 7)
         }
