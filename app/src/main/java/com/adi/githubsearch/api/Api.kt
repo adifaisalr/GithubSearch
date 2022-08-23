@@ -1,6 +1,5 @@
 package com.adi.githubsearch.api
 
-import com.adi.githubsearch.FlipperWrapper
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
